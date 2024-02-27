@@ -1,7 +1,7 @@
 import Container from "@/components/container";
 import Input from "@/components/input";
 import ListsGames from "@/components/lists-games";
-import { getRandomGames } from "@/shared/get-random-games";
+import { getRandomGames } from "@/services/api/get-random-games";
 import { GameProps } from "@/types/utils/game";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export default async function Home() {
         </h1>
 
         <Link href={`/game/${randomGames.id}`}>
-          <div className="w-full bg-black flex items-center justify-center">
+          <div className="w-full bg-black flex items-center justify-center ">
             <div className="w-full max-h-96 h-96 relative">
               <div className="absolute left-4 bottom-4 opacity-100 shadow-2xl z-50 text-zinc-800 bg-slate-100 p-1 text-2xl font-bold flex items-center gap-3">
                 <p>{randomGames.title}</p>

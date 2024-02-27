@@ -2,6 +2,7 @@ import { GameProps } from "@/types/utils/game";
 import Image from "next/image";
 import Container from "./container";
 import { BsArrowBarRight } from "react-icons/bs";
+import Link from "next/link";
 
 interface props {
   data: GameProps;
@@ -9,7 +10,7 @@ interface props {
 
 export default function GameCard({ data }: props) {
   return (
-    <div className="flex flex-col mb-6 p-2">
+    <Link href={`/game/${data.id}`} className="flex flex-col mb-6 p-2">
       <div className="relative w-full h-56">
         <Image
           className="object-cover hover:scale-105 duration-300 z-10"
@@ -29,6 +30,6 @@ export default function GameCard({ data }: props) {
           className="bg-green-500 text-zinc-50 h-full rounded-br-2xl"
         />
       </div>
-    </div>
+    </Link>
   );
 }
