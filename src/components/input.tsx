@@ -4,6 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import Container from "./container";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Input() {
   const [input, setInput] = useState("");
@@ -29,9 +30,12 @@ export default function Input() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
-          <button className="bg-green-500 h-12 w-12 flex items-center justify-center rounded-tr-xl rounded-br-xl">
+          <Link
+            href={`/game/search/${input}`}
+            className="bg-green-500 h-12 w-12 flex items-center justify-center rounded-tr-xl rounded-br-xl"
+          >
             <BsSearch size={20} className="text-slate-50" />
-          </button>
+          </Link>
         </div>
       </Container>
     </form>
