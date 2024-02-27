@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loading-style {
+  height: calc(100vh - 50px);
+}
